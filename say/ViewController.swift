@@ -19,7 +19,7 @@ class ViewController: NSViewController {
 		NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(pauseTimer), name: NSApplicationDidResignActiveNotification, object: nil)
 		NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(startTimer), name: NSApplicationDidBecomeActiveNotification, object: nil)
 		
-		for i in NSSpeechSynthesizer.availableVoices() {voiceSelector.addItemWithTitle(i.componentsSeparatedByString(".").last!.capitalizedString)}
+		for i in NSSpeechSynthesizer.availableVoices() {print(i); voiceSelector.addItemWithTitle(i.componentsSeparatedByString(".premium").first!.componentsSeparatedByString(".").last!.capitalizedString)}
 		voiceSelector.selectItemWithTitle("Alex")
 	}
 	
